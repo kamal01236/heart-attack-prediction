@@ -118,22 +118,40 @@ This document provides a detailed low-level design for the Heart Attack Predicti
 
 ---
 
-## 6. Model Artifacts
-**Objective:** Save the trained model and provide an interface for real-time predictions.
+
+## 6. Model Artifacts & API Design
+**Objective:** Save the trained model, provide an interface for real-time predictions, and enable step-by-step workflow via API endpoints.
 
 - **Model Serialization:**
   - Use `joblib.dump()` or `pickle.dump()` to serialize the final trained model.
-  - Save the model file in the `models/` directory (e.g., `models/heart_attack_model.pkl`).
+  - Save the model file in the `models/` directory (e.g., `models/final_decision_tree_model.pkl`).
   - Document the model version and training parameters for reproducibility.
-- **API Development:**
-  - Use Flask to build a REST API in `src/app.py`.
-  - Load the serialized model at startup.
-  - Expose a `/predict` endpoint that accepts patient data (JSON), preprocesses it, and returns the prediction (risk of heart attack: yes/no or probability).
-  - Validate and sanitize input data in the API.
-  - Optionally, log requests and predictions for monitoring.
+
+- **API Development (Flask, src/app.py):**
+  - **/train (POST):**
+    - Triggers model training pipeline (data load, preprocess, train, evaluate, save model).
+    - Returns training metrics (F1, confusion matrix, classification report, best hyperparameters).
+    - Allows retraining with new data if needed.
+  - **/predict (POST):**
+    - Accepts patient data (JSON), preprocesses using the same pipeline, and returns prediction (risk: yes/no or probability).
+    - Handles both single and batch predictions.
+  - **/tree (GET):**
+    - Returns a visualization (e.g., SVG or PNG) or a text representation of the trained decision tree.
+    - For VS Code: Save the tree visualization as an image file (e.g., `models/tree_visualization.png`) and provide the path for easy preview in the editor.
+  - **Input Validation:**
+    - Validate and sanitize input data for all endpoints.
+    - Return clear error messages for invalid input.
+  - **Logging:**
+    - Log requests, predictions, and training events for monitoring and debugging.
+
+- **VS Code Integration:**
+  - Tree visualization can be previewed directly in VS Code by opening the generated image file.
+  - All API endpoints can be tested using REST clients (e.g., Thunder Client, Postman) or VS Code's built-in REST client.
+
 
 
 ---
+
 
 ## Best Practices
 - Use `random_state=13` everywhere for reproducibility.
@@ -144,6 +162,8 @@ This document provides a detailed low-level design for the Heart Attack Predicti
 - Use version control (e.g., git) to track changes.
 - Ensure code is robust to missing or malformed data.
 - Test the API with sample requests before deployment.
+- Provide clear API documentation and example requests/responses.
+- For tree visualization, use `sklearn.tree.export_graphviz` or `plot_tree` and save as an image for easy preview in VS Code.
 
 
 ---
