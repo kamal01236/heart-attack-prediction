@@ -10,7 +10,7 @@ This project predicts the risk of heart attack using a Decision Tree Classifier 
 ## Deliverables & Solution Write-up
 
 ### 1. Jupyter Notebook for Model Creation/Experimentation
-- **File:** `notebooks/heart_attack_model.ipynb`
+- **File:** `notebooks/pipeline_workflow.ipynb`
 - **Purpose:**
   - Step-by-step workflow for data loading, EDA, preprocessing, model training, hyperparameter tuning, evaluation, and model saving.
   - Includes visualizations (distributions, outliers, correlations) and markdown explanations.
@@ -77,7 +77,7 @@ Given a dataset of US heart patients, the goal is to build a machine learning mo
 ├── data/US_Heart_Patients.csv         # Dataset
 ├── models/final_decision_tree_model.pkl  # Trained model
 ├── models/tree_visualization.png      # Decision tree image (generated)
-├── notebooks/heart_attack_model.ipynb # EDA, training, evaluation
+├── notebooks/pipeline_workflow.ipynb  # EDA, training, evaluation
 ├── src/train_model.py                 # Training script
 ├── src/app.py                         # Flask API
 ├── requirements.txt                   # Dependencies
@@ -146,16 +146,64 @@ Retrain the model (see above). Returns training metrics.
 ### 2. `/predict` (POST)
 Predict heart attack risk for one or more patients.
 
-**Example request:**
+**Example request1:**
 ```bash
-curl -X POST http://127.0.0.1:5000/predict \
-	  -H "Content-Type: application/json" \
-	  -d "{\"age\": 55, \"gender\": \"Male\", ...}"
+
+Invoke-WebRequest -Uri "http://127.0.0.1:5000/predict" `
+>>     -Method POST `
+>>     -ContentType "application/json" `
+>>     -Body '{
+>>         "age": 55,
+>>         "Gender": "Male",
+>>         "BMI": 26.5,
+>>         "BP Meds": 0,
+>>         "diabetes": 0,
+>>         "heartRate": 72,
+>>         "tot cholesterol": 210,
+>>         "prevalentStroke": 0,
+>>         "Systolic BP": 130,
+>>         "Diastolic BP": 85,
+>>         "glucose": 90,
+>>         "education": 2,
+>>         "currentSmoker": 1,
+>>         "cigsPerDay": 10,
+>>         "prevalentHyp": 1
+>>     }'
 ```
 **Response:**
 ```json
 {"predictions": [0]}
 ```
+
+**Example request2:**
+```bash
+
+Invoke-WebRequest -Uri "http://127.0.0.1:5000/predict" `
+>>     -Method POST `
+>>     -ContentType "application/json" `
+>>     -Body '{
+>>         "age": 55,
+>>         "Gender": "Male",
+>>         "BMI": 26.5,
+>>         "BP Meds": 0,
+>>         "diabetes": 0,
+>>         "heartRate": 72,
+>>         "tot cholesterol": 280,
+>>         "prevalentStroke": 0,
+>>         "Systolic BP": 190,
+>>         "Diastolic BP": 120,
+>>         "glucose": 90,
+>>         "education": 2,
+>>         "currentSmoker": 1,
+>>         "cigsPerDay": 20,
+>>         "prevalentHyp": 1
+>>     }'
+```
+**Response:**
+```json
+{"predictions": [1]}
+```
+
 
 ### 3. `/tree` (GET)
 Get a visualization of the trained decision tree.
