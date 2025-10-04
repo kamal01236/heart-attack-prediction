@@ -1,0 +1,26 @@
+# Auto-detect text files and perform LF normalization
+* text=auto
+
+# Jupyter Notebooks: treat them as text for diff/merge
+*.ipynb linguist-language=Jupyter Notebook
+*.ipynb filter=nbstripout
+
+# Python files
+*.py linguist-language=Python
+
+# CSV and data files
+*.csv text
+*.json text
+
+# Images and binaries (no diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pkl binary
+*.joblib binary
+*.sav binary
+
+# Windows-specific
+*.bat text eol=crlf
+*.ps1 text eol=crlf
