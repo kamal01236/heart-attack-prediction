@@ -1,123 +1,222 @@
 |--- num__age <= 48.50
 |   |--- num__Systolic BP <= 192.00
-|   |   |--- num__tot cholesterol <= 398.50
-|   |   |   |--- num__cigsPerDay <= 8.50
-|   |   |   |   |--- num__BMI <= 16.65
-|   |   |   |   |   |--- num__Diastolic BP <= 89.25
-|   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- num__Diastolic BP >  89.25
-|   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- num__BMI >  16.65
-|   |   |   |   |   |--- num__BMI <= 39.42
-|   |   |   |   |   |   |--- num__Systolic BP <= 100.25
-|   |   |   |   |   |   |   |--- num__BMI <= 24.81
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__BMI >  24.81
-|   |   |   |   |   |   |   |   |--- num__glucose <= 79.00
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num__glucose >  79.00
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- num__Systolic BP >  100.25
-|   |   |   |   |   |   |   |--- num__Diastolic BP <= 107.50
-|   |   |   |   |   |   |   |   |--- cat__Gender_Female <= 0.50
-|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 292.50
-|   |   |   |   |   |   |   |   |   |   |--- num__Systolic BP <= 140.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
-|   |   |   |   |   |   |   |   |   |   |--- num__Systolic BP >  140.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
-|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol >  292.50
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 92.75
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  92.75
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |--- cat__Gender_Female >  0.50
-|   |   |   |   |   |   |   |   |   |--- num__glucose <= 120.00
-|   |   |   |   |   |   |   |   |   |   |--- num__age <= 40.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__age >  40.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
-|   |   |   |   |   |   |   |   |   |--- num__glucose >  120.00
-|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 125.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  125.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__Diastolic BP >  107.50
-|   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 259.50
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- num__tot cholesterol >  259.50
-|   |   |   |   |   |   |   |   |   |--- num__age <= 47.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__age >  47.50
+|   |   |--- num__Systolic BP <= 136.75
+|   |   |   |--- num__tot cholesterol <= 299.50
+|   |   |   |   |--- num__BMI <= 38.75
+|   |   |   |   |   |--- num__Diastolic BP <= 96.75
+|   |   |   |   |   |   |--- num__glucose <= 121.00
+|   |   |   |   |   |   |   |--- num__cigsPerDay <= 9.50
+|   |   |   |   |   |   |   |   |--- num__Systolic BP <= 100.25
+|   |   |   |   |   |   |   |   |   |--- num__BMI <= 24.81
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- num__BMI >  39.42
-|   |   |   |   |   |   |--- num__glucose <= 79.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- num__glucose >  79.50
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |--- num__cigsPerDay >  8.50
-|   |   |   |   |--- num__Systolic BP <= 137.25
-|   |   |   |   |   |--- num__Diastolic BP <= 97.25
-|   |   |   |   |   |   |--- num__Systolic BP <= 84.25
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num__Systolic BP >  84.25
-|   |   |   |   |   |   |   |--- num__BMI <= 39.89
-|   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 299.50
-|   |   |   |   |   |   |   |   |   |--- num__glucose <= 114.00
-|   |   |   |   |   |   |   |   |   |   |--- num__Systolic BP <= 122.25
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
-|   |   |   |   |   |   |   |   |   |   |--- num__Systolic BP >  122.25
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
-|   |   |   |   |   |   |   |   |   |--- num__glucose >  114.00
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate <= 71.00
+|   |   |   |   |   |   |   |   |   |--- num__BMI >  24.81
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 79.00
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate >  71.00
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  79.00
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- num__tot cholesterol >  299.50
-|   |   |   |   |   |   |   |   |   |--- num__BMI <= 28.78
-|   |   |   |   |   |   |   |   |   |   |--- cat__Gender_Female <= 0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- cat__Gender_Female >  0.50
+|   |   |   |   |   |   |   |   |--- num__Systolic BP >  100.25
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 80.75
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 75.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  75.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |--- num__BMI >  28.78
-|   |   |   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 17.50
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  80.75
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 20.96
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  20.96
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |--- num__cigsPerDay >  9.50
+|   |   |   |   |   |   |   |   |--- num__Systolic BP <= 122.25
+|   |   |   |   |   |   |   |   |   |--- num__heartRate <= 67.50
+|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 75.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  75.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- num__heartRate >  67.50
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 18.24
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- num__cigsPerDay >  17.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- num__BMI >  39.89
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  18.24
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |--- num__Systolic BP >  122.25
+|   |   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 39.00
+|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 91.75
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  91.75
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- num__cigsPerDay >  39.00
+|   |   |   |   |   |   |   |   |   |   |--- num__age <= 46.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- num__age >  46.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- num__glucose >  121.00
+|   |   |   |   |   |   |   |--- num__glucose <= 125.00
 |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- num__Diastolic BP >  97.25
-|   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- num__Systolic BP >  137.25
-|   |   |   |   |   |--- num__glucose <= 216.50
-|   |   |   |   |   |   |--- num__heartRate <= 107.50
-|   |   |   |   |   |   |   |--- num__glucose <= 55.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- num__glucose >  55.50
-|   |   |   |   |   |   |   |   |--- num__heartRate <= 51.00
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num__heartRate >  51.00
-|   |   |   |   |   |   |   |   |   |--- num__BMI <= 42.49
-|   |   |   |   |   |   |   |   |   |   |--- num__currentSmoker <= 0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- num__currentSmoker >  0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
-|   |   |   |   |   |   |   |   |   |--- num__BMI >  42.49
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num__heartRate >  107.50
-|   |   |   |   |   |   |   |--- num__tot cholesterol <= 253.50
+|   |   |   |   |   |   |   |--- num__glucose >  125.00
 |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__tot cholesterol >  253.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- num__glucose >  216.50
+|   |   |   |   |   |--- num__Diastolic BP >  96.75
+|   |   |   |   |   |   |--- num__BMI <= 28.68
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__BMI >  28.68
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__BMI >  38.75
+|   |   |   |   |   |--- num__tot cholesterol <= 264.00
 |   |   |   |   |   |   |--- class: 1
-|   |   |--- num__tot cholesterol >  398.50
-|   |   |   |--- num__age <= 44.00
-|   |   |   |   |--- num__tot cholesterol <= 458.50
-|   |   |   |   |   |--- class: 0
-|   |   |   |   |--- num__tot cholesterol >  458.50
+|   |   |   |   |   |--- num__tot cholesterol >  264.00
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- num__tot cholesterol >  299.50
+|   |   |   |   |--- num__BMI <= 28.78
+|   |   |   |   |   |--- num__Diastolic BP <= 92.75
+|   |   |   |   |   |   |--- cat__Gender_Male <= 0.50
+|   |   |   |   |   |   |   |--- num__glucose <= 102.00
+|   |   |   |   |   |   |   |   |--- num__heartRate <= 69.00
+|   |   |   |   |   |   |   |   |   |--- num__glucose <= 76.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- num__glucose >  76.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__heartRate >  69.00
+|   |   |   |   |   |   |   |   |   |--- num__Systolic BP <= 126.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__Systolic BP >  126.00
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 24.86
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  24.86
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__glucose >  102.00
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- cat__Gender_Male >  0.50
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__Diastolic BP >  92.75
+|   |   |   |   |   |   |--- num__cigsPerDay <= 4.00
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__cigsPerDay >  4.00
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- num__BMI >  28.78
+|   |   |   |   |   |--- num__Systolic BP <= 118.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__Systolic BP >  118.50
+|   |   |   |   |   |   |--- num__tot cholesterol <= 329.50
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__tot cholesterol >  329.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |--- num__Systolic BP >  136.75
+|   |   |   |--- num__cigsPerDay <= 16.50
+|   |   |   |   |--- num__Systolic BP <= 137.25
+|   |   |   |   |   |--- cat__Gender_Male <= 0.50
+|   |   |   |   |   |   |--- num__Diastolic BP <= 81.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__Diastolic BP >  81.50
+|   |   |   |   |   |   |   |--- num__prevalentHyp <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__prevalentHyp >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- cat__Gender_Male >  0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- num__Systolic BP >  137.25
+|   |   |   |   |   |--- cat__Gender_Female <= 0.50
+|   |   |   |   |   |   |--- num__Diastolic BP <= 80.25
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__Diastolic BP >  80.25
+|   |   |   |   |   |   |   |--- num__tot cholesterol <= 256.50
+|   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 2.00
+|   |   |   |   |   |   |   |   |   |--- num__age <= 47.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__age >  47.50
+|   |   |   |   |   |   |   |   |   |   |--- num__prevalentHyp <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- num__prevalentHyp >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__cigsPerDay >  2.00
+|   |   |   |   |   |   |   |   |   |--- num__glucose <= 81.50
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 26.55
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  26.55
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- num__glucose >  81.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__tot cholesterol >  256.50
+|   |   |   |   |   |   |   |   |--- num__Systolic BP <= 147.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__Systolic BP >  147.00
+|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 271.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol >  271.50
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 30.25
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  30.25
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- cat__Gender_Female >  0.50
+|   |   |   |   |   |   |--- num__BMI <= 38.69
+|   |   |   |   |   |   |   |--- num__glucose_missing <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__glucose_missing >  0.50
+|   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 7.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__cigsPerDay >  7.00
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__BMI >  38.69
+|   |   |   |   |   |   |   |--- num__tot cholesterol <= 251.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__tot cholesterol >  251.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- num__cigsPerDay >  16.50
+|   |   |   |   |--- num__glucose <= 152.04
+|   |   |   |   |   |--- num__BMI <= 22.69
+|   |   |   |   |   |   |--- num__tot cholesterol <= 225.50
+|   |   |   |   |   |   |   |--- num__glucose <= 69.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__glucose >  69.50
+|   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 81.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__Diastolic BP >  81.00
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__tot cholesterol >  225.50
+|   |   |   |   |   |   |   |--- num__cigsPerDay <= 19.00
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__cigsPerDay >  19.00
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__BMI >  22.69
+|   |   |   |   |   |   |--- num__tot cholesterol <= 245.50
+|   |   |   |   |   |   |   |--- num__BMI <= 37.37
+|   |   |   |   |   |   |   |   |--- num__heartRate <= 55.00
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- num__heartRate >  55.00
+|   |   |   |   |   |   |   |   |   |--- num__heartRate <= 98.50
+|   |   |   |   |   |   |   |   |   |   |--- num__education <= 3.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- num__education >  3.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- num__heartRate >  98.50
+|   |   |   |   |   |   |   |   |   |   |--- num__education <= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- num__education >  1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__BMI >  37.37
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__tot cholesterol >  245.50
+|   |   |   |   |   |   |   |--- num__BMI <= 30.18
+|   |   |   |   |   |   |   |   |--- num__BMI <= 27.51
+|   |   |   |   |   |   |   |   |   |--- num__glucose <= 70.50
+|   |   |   |   |   |   |   |   |   |   |--- num__heartRate <= 79.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- num__heartRate >  79.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__glucose >  70.50
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose_missing <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose_missing >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- num__BMI >  27.51
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 89.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  89.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__BMI >  30.18
+|   |   |   |   |   |   |   |   |--- num__glucose <= 88.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__glucose >  88.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__glucose >  152.04
 |   |   |   |   |   |--- class: 1
-|   |   |   |--- num__age >  44.00
-|   |   |   |   |--- class: 1
 |   |--- num__Systolic BP >  192.00
 |   |   |--- num__age <= 44.00
 |   |   |   |--- class: 0
@@ -126,193 +225,312 @@
 |--- num__age >  48.50
 |   |--- num__Systolic BP <= 144.25
 |   |   |--- num__glucose <= 142.50
-|   |   |   |--- num__tot cholesterol <= 138.50
-|   |   |   |   |--- class: 1
-|   |   |   |--- num__tot cholesterol >  138.50
-|   |   |   |   |--- cat__Gender_Male <= 0.50
-|   |   |   |   |   |--- num__heartRate <= 89.00
-|   |   |   |   |   |   |--- num__BMI <= 36.40
-|   |   |   |   |   |   |   |--- num__BP Meds <= 0.50
-|   |   |   |   |   |   |   |   |--- num__heartRate <= 69.50
-|   |   |   |   |   |   |   |   |   |--- num__BMI <= 33.05
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 61.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  61.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
-|   |   |   |   |   |   |   |   |   |--- num__BMI >  33.05
+|   |   |   |--- cat__Gender_Male <= 0.50
+|   |   |   |   |--- num__heartRate <= 89.00
+|   |   |   |   |   |--- num__BMI <= 36.40
+|   |   |   |   |   |   |--- num__BP Meds <= 0.50
+|   |   |   |   |   |   |   |--- num__heartRate <= 69.50
+|   |   |   |   |   |   |   |   |--- num__BMI <= 33.05
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 61.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num__heartRate >  69.50
-|   |   |   |   |   |   |   |   |   |--- num__BMI <= 20.03
-|   |   |   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 264.50
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  61.50
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 56.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  56.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |--- num__BMI >  33.05
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__heartRate >  69.50
+|   |   |   |   |   |   |   |   |--- num__BMI <= 20.03
+|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 264.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol >  264.50
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 19.11
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__tot cholesterol >  264.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |--- num__BMI >  20.03
-|   |   |   |   |   |   |   |   |   |   |--- num__age <= 67.50
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  19.11
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- num__BMI >  20.03
+|   |   |   |   |   |   |   |   |   |--- num__age <= 67.50
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 90.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
-|   |   |   |   |   |   |   |   |   |   |--- num__age >  67.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |--- num__BP Meds >  0.50
-|   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 87.50
-|   |   |   |   |   |   |   |   |   |--- num__age <= 53.50
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate <= 57.50
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  90.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate >  57.50
+|   |   |   |   |   |   |   |   |   |--- num__age >  67.50
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 76.00
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__age >  53.50
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  76.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__BP Meds >  0.50
+|   |   |   |   |   |   |   |--- num__Diastolic BP <= 87.50
+|   |   |   |   |   |   |   |   |--- num__age <= 53.50
+|   |   |   |   |   |   |   |   |   |--- num__heartRate <= 57.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- num__Diastolic BP >  87.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num__BMI >  36.40
-|   |   |   |   |   |   |   |--- num__BP Meds <= 0.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- num__BP Meds >  0.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- num__heartRate >  89.00
-|   |   |   |   |   |   |--- num__tot cholesterol <= 251.00
-|   |   |   |   |   |   |   |--- num__BMI <= 25.08
-|   |   |   |   |   |   |   |   |--- num__age <= 57.50
-|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 195.50
-|   |   |   |   |   |   |   |   |   |   |--- num__age <= 53.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__age >  53.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol >  195.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- num__age >  57.50
-|   |   |   |   |   |   |   |   |   |--- num__education <= 2.00
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate <= 93.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate >  93.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- num__education >  2.00
+|   |   |   |   |   |   |   |   |   |--- num__heartRate >  57.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- num__BMI >  25.08
-|   |   |   |   |   |   |   |   |--- num__education <= 1.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num__education >  1.50
-|   |   |   |   |   |   |   |   |   |--- num__BMI <= 27.69
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 71.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  71.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__BMI >  27.69
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- num__tot cholesterol >  251.00
-|   |   |   |   |   |   |   |--- num__heartRate <= 106.50
-|   |   |   |   |   |   |   |   |--- num__Systolic BP <= 112.25
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num__Systolic BP >  112.25
-|   |   |   |   |   |   |   |   |   |--- num__glucose <= 73.50
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate <= 99.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate >  99.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__glucose >  73.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__heartRate >  106.50
-|   |   |   |   |   |   |   |   |--- num__heartRate <= 126.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num__heartRate >  126.50
+|   |   |   |   |   |   |   |   |--- num__age >  53.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |--- cat__Gender_Male >  0.50
-|   |   |   |   |   |--- num__Systolic BP <= 118.25
-|   |   |   |   |   |   |--- num__Diastolic BP <= 60.50
-|   |   |   |   |   |   |   |--- num__Systolic BP <= 90.75
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__Systolic BP >  90.75
+|   |   |   |   |   |   |   |--- num__Diastolic BP >  87.50
 |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num__Diastolic BP >  60.50
-|   |   |   |   |   |   |   |--- num__glucose <= 59.00
-|   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 25.00
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num__cigsPerDay >  25.00
+|   |   |   |   |   |--- num__BMI >  36.40
+|   |   |   |   |   |   |--- num__tot cholesterol <= 289.00
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__tot cholesterol >  289.00
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- num__heartRate >  89.00
+|   |   |   |   |   |--- num__tot cholesterol <= 251.00
+|   |   |   |   |   |   |--- num__BMI <= 25.08
+|   |   |   |   |   |   |   |--- num__age <= 57.50
+|   |   |   |   |   |   |   |   |--- num__glucose_missing <= 0.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__glucose >  59.00
-|   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 303.00
-|   |   |   |   |   |   |   |   |   |--- num__prevalentHyp <= 0.50
-|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 21.11
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  21.11
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
-|   |   |   |   |   |   |   |   |   |--- num__prevalentHyp >  0.50
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate <= 69.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__heartRate >  69.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num__tot cholesterol >  303.00
-|   |   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 16.50
+|   |   |   |   |   |   |   |   |--- num__glucose_missing >  0.50
+|   |   |   |   |   |   |   |   |   |--- num__heartRate <= 100.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- num__heartRate >  100.00
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- num__cigsPerDay >  16.50
+|   |   |   |   |   |   |   |--- num__age >  57.50
+|   |   |   |   |   |   |   |   |--- num__BMI <= 22.74
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- num__BMI >  22.74
+|   |   |   |   |   |   |   |   |   |--- num__Systolic BP <= 141.25
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__Systolic BP >  141.25
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- num__Systolic BP >  118.25
-|   |   |   |   |   |   |--- num__glucose <= 62.50
-|   |   |   |   |   |   |   |--- num__education <= 3.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__education >  3.50
+|   |   |   |   |   |   |--- num__BMI >  25.08
+|   |   |   |   |   |   |   |--- num__education <= 1.50
 |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num__glucose >  62.50
-|   |   |   |   |   |   |   |--- num__Diastolic BP <= 75.50
-|   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 259.00
-|   |   |   |   |   |   |   |   |   |--- num__glucose <= 66.00
+|   |   |   |   |   |   |   |--- num__education >  1.50
+|   |   |   |   |   |   |   |   |--- num__BMI <= 27.69
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 71.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  71.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__glucose >  66.00
-|   |   |   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 34.00
+|   |   |   |   |   |   |   |   |--- num__BMI >  27.69
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__tot cholesterol >  251.00
+|   |   |   |   |   |   |--- num__heartRate <= 106.50
+|   |   |   |   |   |   |   |--- num__Systolic BP <= 112.25
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__Systolic BP >  112.25
+|   |   |   |   |   |   |   |   |--- num__glucose <= 73.50
+|   |   |   |   |   |   |   |   |   |--- num__heartRate <= 99.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__heartRate >  99.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- num__glucose >  73.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__heartRate >  106.50
+|   |   |   |   |   |   |   |--- num__BMI <= 20.09
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__BMI >  20.09
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- cat__Gender_Male >  0.50
+|   |   |   |   |--- num__Systolic BP <= 118.25
+|   |   |   |   |   |--- num__Diastolic BP <= 60.50
+|   |   |   |   |   |   |--- num__glucose <= 93.00
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__glucose >  93.00
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__Diastolic BP >  60.50
+|   |   |   |   |   |   |--- num__glucose <= 59.00
+|   |   |   |   |   |   |   |--- num__cigsPerDay <= 25.00
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__cigsPerDay >  25.00
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__glucose >  59.00
+|   |   |   |   |   |   |   |--- num__tot cholesterol <= 303.00
+|   |   |   |   |   |   |   |   |--- num__prevalentHyp <= 0.50
+|   |   |   |   |   |   |   |   |   |--- num__BMI <= 21.11
+|   |   |   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 25.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- num__cigsPerDay >  25.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- num__BMI >  21.11
+|   |   |   |   |   |   |   |   |   |   |--- num__diabetes <= 0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
-|   |   |   |   |   |   |   |   |   |   |--- num__cigsPerDay >  34.00
+|   |   |   |   |   |   |   |   |   |   |--- num__diabetes >  0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |--- num__tot cholesterol >  259.00
-|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 276.50
-|   |   |   |   |   |   |   |   |   |   |--- num__Systolic BP <= 122.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- num__Systolic BP >  122.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__tot cholesterol >  276.50
+|   |   |   |   |   |   |   |   |--- num__prevalentHyp >  0.50
+|   |   |   |   |   |   |   |   |   |--- num__Systolic BP <= 114.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__Diastolic BP >  75.50
-|   |   |   |   |   |   |   |   |--- num__heartRate <= 52.50
-|   |   |   |   |   |   |   |   |   |--- num__Systolic BP <= 142.50
+|   |   |   |   |   |   |   |   |   |--- num__Systolic BP >  114.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__Systolic BP >  142.50
+|   |   |   |   |   |   |   |--- num__tot cholesterol >  303.00
+|   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 16.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__cigsPerDay >  16.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__Systolic BP >  118.25
+|   |   |   |   |   |--- num__glucose <= 62.50
+|   |   |   |   |   |   |--- num__education <= 3.50
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__education >  3.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__glucose >  62.50
+|   |   |   |   |   |   |--- num__glucose <= 66.50
+|   |   |   |   |   |   |   |--- num__Diastolic BP <= 80.75
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__Diastolic BP >  80.75
+|   |   |   |   |   |   |   |   |--- num__age <= 56.50
+|   |   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 22.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- num__heartRate >  52.50
-|   |   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 18.00
-|   |   |   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 14.00
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 16
-|   |   |   |   |   |   |   |   |   |   |--- num__cigsPerDay >  14.00
+|   |   |   |   |   |   |   |   |   |--- num__cigsPerDay >  22.50
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 27.06
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  27.06
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__age >  56.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__glucose >  66.50
+|   |   |   |   |   |   |   |--- num__tot cholesterol <= 295.50
+|   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 274.50
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 77.25
+|   |   |   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 259.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- num__tot cholesterol >  259.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  77.25
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 30.63
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  30.63
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
-|   |   |   |   |   |   |   |   |   |--- num__cigsPerDay >  18.00
-|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 104.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
-|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  104.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |--- num__tot cholesterol >  274.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__tot cholesterol >  295.50
+|   |   |   |   |   |   |   |   |--- num__heartRate <= 66.50
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 77.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  77.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- num__heartRate >  66.50
+|   |   |   |   |   |   |   |   |   |--- num__education <= 3.50
+|   |   |   |   |   |   |   |   |   |   |--- num__Systolic BP <= 135.75
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- num__Systolic BP >  135.75
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- num__education >  3.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |--- num__glucose >  142.50
 |   |   |   |--- num__Diastolic BP <= 81.50
-|   |   |   |   |--- cat__Gender_Male <= 0.50
-|   |   |   |   |   |--- num__prevalentHyp <= 0.50
-|   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- num__prevalentHyp >  0.50
-|   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- cat__Gender_Male >  0.50
+|   |   |   |   |--- cat__Gender_Female <= 0.50
 |   |   |   |   |   |--- num__BMI <= 23.48
-|   |   |   |   |   |   |--- num__heartRate <= 78.00
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- num__heartRate >  78.00
+|   |   |   |   |   |   |--- num__Diastolic BP <= 71.75
 |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__Diastolic BP >  71.75
+|   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |--- num__BMI >  23.48
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- cat__Gender_Female >  0.50
+|   |   |   |   |   |--- num__tot cholesterol <= 266.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__tot cholesterol >  266.50
 |   |   |   |   |   |   |--- class: 1
 |   |   |   |--- num__Diastolic BP >  81.50
 |   |   |   |   |--- class: 0
 |   |--- num__Systolic BP >  144.25
 |   |   |--- num__cigsPerDay <= 32.50
-|   |   |   |--- cat__Gender_Female <= 0.50
+|   |   |   |--- cat__Gender_Male <= 0.50
+|   |   |   |   |--- num__age <= 56.50
+|   |   |   |   |   |--- num__glucose <= 122.00
+|   |   |   |   |   |   |--- num__prevalentStroke <= 0.50
+|   |   |   |   |   |   |   |--- num__Diastolic BP <= 72.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__Diastolic BP >  72.50
+|   |   |   |   |   |   |   |   |--- num__education <= 3.50
+|   |   |   |   |   |   |   |   |   |--- num__BMI <= 26.35
+|   |   |   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 244.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- num__tot cholesterol >  244.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- num__BMI >  26.35
+|   |   |   |   |   |   |   |   |   |   |--- num__age <= 49.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- num__age >  49.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |--- num__education >  3.50
+|   |   |   |   |   |   |   |   |   |--- num__glucose <= 71.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num__glucose >  71.50
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 78.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  78.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__prevalentStroke >  0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__glucose >  122.00
+|   |   |   |   |   |   |--- num__tot cholesterol <= 254.00
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__tot cholesterol >  254.00
+|   |   |   |   |   |   |   |--- num__age <= 53.50
+|   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 106.00
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- num__Diastolic BP >  106.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__age >  53.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- num__age >  56.50
+|   |   |   |   |   |--- num__Diastolic BP <= 85.75
+|   |   |   |   |   |   |--- num__glucose <= 69.50
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__glucose >  69.50
+|   |   |   |   |   |   |   |--- num__age <= 66.50
+|   |   |   |   |   |   |   |   |--- num__heartRate <= 63.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__heartRate >  63.50
+|   |   |   |   |   |   |   |   |   |--- num__BMI <= 21.16
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- num__BMI >  21.16
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 110.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  110.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__age >  66.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__Diastolic BP >  85.75
+|   |   |   |   |   |   |--- num__tot cholesterol <= 197.00
+|   |   |   |   |   |   |   |--- num__heartRate <= 87.00
+|   |   |   |   |   |   |   |   |--- num__diabetes <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- num__diabetes >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__heartRate >  87.00
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__tot cholesterol >  197.00
+|   |   |   |   |   |   |   |--- num__glucose <= 174.04
+|   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 99.50
+|   |   |   |   |   |   |   |   |   |--- num__age <= 64.50
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 79.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  79.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- num__age >  64.50
+|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 88.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  88.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |--- num__Diastolic BP >  99.50
+|   |   |   |   |   |   |   |   |   |--- num__glucose <= 84.00
+|   |   |   |   |   |   |   |   |   |   |--- num__heartRate <= 91.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- num__heartRate >  91.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- num__glucose >  84.00
+|   |   |   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 232.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- num__tot cholesterol >  232.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |--- num__glucose >  174.04
+|   |   |   |   |   |   |   |   |--- num__tot cholesterol <= 238.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num__tot cholesterol >  238.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- cat__Gender_Male >  0.50
 |   |   |   |   |--- num__Systolic BP <= 162.25
 |   |   |   |   |   |--- num__heartRate <= 99.00
 |   |   |   |   |   |   |--- num__glucose <= 69.50
 |   |   |   |   |   |   |   |--- num__age <= 49.50
-|   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 99.75
+|   |   |   |   |   |   |   |   |--- num__cigsPerDay <= 14.50
 |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num__Diastolic BP >  99.75
+|   |   |   |   |   |   |   |   |--- num__cigsPerDay >  14.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |--- num__age >  49.50
 |   |   |   |   |   |   |   |   |--- class: 0
@@ -360,17 +578,17 @@
 |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 79.00
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  79.00
-|   |   |   |   |   |   |   |   |   |   |--- num__age <= 53.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- num__age >  53.50
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 29.79
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  29.79
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
 |   |   |   |   |   |   |   |   |--- num__prevalentStroke >  0.50
 |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |--- num__heartRate >  91.00
-|   |   |   |   |   |   |   |   |--- num__glucose <= 70.50
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- num__glucose >  70.50
+|   |   |   |   |   |   |   |   |--- num__education <= 2.00
 |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- num__education >  2.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- num__glucose >  78.50
 |   |   |   |   |   |   |   |--- num__Diastolic BP <= 102.50
 |   |   |   |   |   |   |   |   |--- num__heartRate <= 104.00
@@ -394,85 +612,11 @@
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |   |   |--- num__glucose >  81.00
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |--- cat__Gender_Female >  0.50
-|   |   |   |   |--- num__age <= 56.50
-|   |   |   |   |   |--- num__glucose <= 122.00
-|   |   |   |   |   |   |--- num__Diastolic BP <= 72.50
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num__Diastolic BP >  72.50
-|   |   |   |   |   |   |   |--- num__BMI <= 40.36
-|   |   |   |   |   |   |   |   |--- num__prevalentStroke <= 0.50
-|   |   |   |   |   |   |   |   |   |--- num__education <= 3.50
-|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 26.35
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
-|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  26.35
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |--- num__education >  3.50
-|   |   |   |   |   |   |   |   |   |   |--- num__glucose <= 71.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__glucose >  71.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |--- num__prevalentStroke >  0.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- num__BMI >  40.36
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- num__glucose >  122.00
-|   |   |   |   |   |   |--- num__glucose <= 225.00
-|   |   |   |   |   |   |   |--- num__Systolic BP <= 154.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__Systolic BP >  154.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num__glucose >  225.00
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |--- num__age >  56.50
-|   |   |   |   |   |--- num__glucose <= 203.50
-|   |   |   |   |   |   |--- num__Diastolic BP <= 85.75
-|   |   |   |   |   |   |   |--- num__glucose <= 69.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__glucose >  69.50
-|   |   |   |   |   |   |   |   |--- num__age <= 66.50
-|   |   |   |   |   |   |   |   |   |--- num__heartRate <= 63.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- num__heartRate >  63.50
-|   |   |   |   |   |   |   |   |   |   |--- num__BMI <= 21.16
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- num__BMI >  21.16
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
-|   |   |   |   |   |   |   |   |--- num__age >  66.50
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- num__Diastolic BP >  85.75
-|   |   |   |   |   |   |   |--- num__tot cholesterol <= 197.00
-|   |   |   |   |   |   |   |   |--- num__BMI <= 34.86
-|   |   |   |   |   |   |   |   |   |--- num__glucose <= 83.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__glucose >  83.50
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 98.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  98.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- num__BMI >  34.86
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num__tot cholesterol >  197.00
-|   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 126.25
-|   |   |   |   |   |   |   |   |   |--- num__BMI <= 20.29
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP <= 101.75
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- num__Diastolic BP >  101.75
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- num__BMI >  20.29
-|   |   |   |   |   |   |   |   |   |   |--- num__age <= 64.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
-|   |   |   |   |   |   |   |   |   |   |--- num__age >  64.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
-|   |   |   |   |   |   |   |   |--- num__Diastolic BP >  126.25
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- num__glucose >  203.50
-|   |   |   |   |   |   |--- class: 1
 |   |   |--- num__cigsPerDay >  32.50
 |   |   |   |--- num__glucose <= 75.50
-|   |   |   |   |--- num__glucose <= 69.00
+|   |   |   |   |--- num__age <= 52.00
 |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- num__glucose >  69.00
+|   |   |   |   |--- num__age >  52.00
 |   |   |   |   |   |--- class: 0
 |   |   |   |--- num__glucose >  75.50
 |   |   |   |   |--- class: 1

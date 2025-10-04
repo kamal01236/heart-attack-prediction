@@ -77,7 +77,7 @@ Given a dataset of US heart patients, the goal is to build a machine learning mo
 ├── data/US_Heart_Patients.csv         # Dataset
 ├── models/final_decision_tree_model.pkl  # Trained model
 ├── models/tree_visualization.png      # Decision tree image (generated)
-├── notebooks/pipeline_workflow.ipynb  # EDA, training, evaluation
+├── notebooks/01_pipeline_workflow.ipynb  # EDA, training, evaluation
 ├── src/train_model.py                 # Training script
 ├── src/app.py                         # Flask API
 ├── requirements.txt                   # Dependencies
@@ -150,60 +150,30 @@ Predict heart attack risk for one or more patients.
 ```bash
 
 Invoke-WebRequest -Uri "http://127.0.0.1:5000/predict" `
->>     -Method POST `
->>     -ContentType "application/json" `
->>     -Body '{
->>         "age": 55,
->>         "Gender": "Male",
->>         "BMI": 26.5,
->>         "BP Meds": 0,
->>         "diabetes": 0,
->>         "heartRate": 72,
->>         "tot cholesterol": 210,
->>         "prevalentStroke": 0,
->>         "Systolic BP": 130,
->>         "Diastolic BP": 85,
->>         "glucose": 90,
->>         "education": 2,
->>         "currentSmoker": 1,
->>         "cigsPerDay": 10,
->>         "prevalentHyp": 1
->>     }'
+     -Method POST `
+     -ContentType "application/json" `
+     -Body '{
+         "age": 55,
+         "Gender": "Male",
+         "BMI": 26.5,
+         "BP Meds": 0,
+         "diabetes": 0,
+         "heartRate": 89,
+         "tot cholesterol": 210,
+         "prevalentStroke": 0,
+         "Systolic BP": 130,
+         "Diastolic BP": 85,
+         "glucose": 90,
+         "education": 2,
+         "currentSmoker": 1,
+         "cigsPerDay": 10,
+         "prevalentHyp": 1
+     }'
 ```
 **Response:**
 ```json
 {"predictions": [0]}
 ```
-
-**Example request2:**
-```bash
-
-Invoke-WebRequest -Uri "http://127.0.0.1:5000/predict" `
->>     -Method POST `
->>     -ContentType "application/json" `
->>     -Body '{
->>         "age": 55,
->>         "Gender": "Male",
->>         "BMI": 26.5,
->>         "BP Meds": 0,
->>         "diabetes": 0,
->>         "heartRate": 72,
->>         "tot cholesterol": 280,
->>         "prevalentStroke": 0,
->>         "Systolic BP": 190,
->>         "Diastolic BP": 120,
->>         "glucose": 90,
->>         "education": 2,
->>         "currentSmoker": 1,
->>         "cigsPerDay": 20,
->>         "prevalentHyp": 1
->>     }'
-```
-**Response:**
-```json
-{"predictions": [1]}
-```
-
 
 ### 3. `/tree` (GET)
 Get a visualization of the trained decision tree.
