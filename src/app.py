@@ -1,25 +1,18 @@
 # app.py
-import os, joblib, json
 import pandas as pd
 from flask import Flask, request, jsonify
 
-MODEL_PATH = "models/final_model.pkl"
-# fallback to RF model name if present
-if not os.path.exists(MODEL_PATH) and os.path.exists("models/final_randomforest_model.pkl"):
-    MODEL_PATH = "models/final_randomforest_model.pkl"
+from src import config
+from src.model_utils import load_model_bundle, choose_threshold
 
-if not os.path.exists(MODEL_PATH):
-    raise FileNotFoundError("Model not found. Run training first. Expected at: " + MODEL_PATH)
+# Load model bundle via centralized utility
+try:
+    model, meta = load_model_bundle()
+except FileNotFoundError as e:
+    # When importing in test discovery or other contexts, raise to surface issue
+    raise
 
-bundle = joblib.load(MODEL_PATH)
-if isinstance(bundle, dict) and "model" in bundle:
-    model = bundle["model"]
-    meta = bundle.get("threshold_selection", {})
-else:
-    model = bundle
-    meta = {}
-
-DEFAULT_THRESHOLD = float(meta.get("threshold_cost_min", meta.get("threshold_optimal_f1", 0.5)))
+DEFAULT_THRESHOLD = float(choose_threshold(meta))
 
 app = Flask(__name__)
 
@@ -59,7 +52,7 @@ def thresholds():
 
 @app.route("/health", methods=["GET"])
 def health():
-    return jsonify({"status": "ok", "model_path": MODEL_PATH})
+    return jsonify({"status": "ok", "model_path": config.MODEL_PATH})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

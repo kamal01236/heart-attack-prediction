@@ -1,6 +1,7 @@
 # tests/test_app.py
 import json
-from heart_attack_prediction.app import app
+from src.app import app
+
 
 def test_predict_valid():
     client = app.test_client()
