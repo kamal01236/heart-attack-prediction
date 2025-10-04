@@ -1,72 +1,65 @@
-
-from flask import Flask, request, jsonify, send_file
+# app.py
+import os, joblib, json
 import pandas as pd
-import joblib
-import os
-import traceback
-from train_model import DATA_PATH, MODEL_PATH, PNG_PATH, DOT_PATH, TEXT_PATH, RANDOM_SEED
+from flask import Flask, request, jsonify
+
+MODEL_PATH = "models/final_model.pkl"
+# fallback to RF model name if present
+if not os.path.exists(MODEL_PATH) and os.path.exists("models/final_randomforest_model.pkl"):
+    MODEL_PATH = "models/final_randomforest_model.pkl"
+
+if not os.path.exists(MODEL_PATH):
+    raise FileNotFoundError("Model not found. Run training first. Expected at: " + MODEL_PATH)
+
+bundle = joblib.load(MODEL_PATH)
+if isinstance(bundle, dict) and "model" in bundle:
+    model = bundle["model"]
+    meta = bundle.get("threshold_selection", {})
+else:
+    model = bundle
+    meta = {}
+
+DEFAULT_THRESHOLD = float(meta.get("threshold_cost_min", meta.get("threshold_optimal_f1", 0.5)))
 
 app = Flask(__name__)
 
-def load_model():
-    if os.path.exists(MODEL_PATH):
-        return joblib.load(MODEL_PATH)
-    return None
-
-def validate_input(data):
-    # Basic validation: check required fields, types, and value ranges
-    required = [
-        "age", "Gender", "BMI", "BP Meds", "diabetes", "heartRate", "tot cholesterol",
-        "prevalentStroke", "Systolic BP", "Diastolic BP", "glucose", "education",
-        "currentSmoker", "cigsPerDay", "prevalentHyp"
-    ]
-    errors = []
-    if isinstance(data, dict):
-        data = [data]
-    for idx, row in enumerate(data):
-        for field in required:
-            if field not in row:
-                errors.append(f"Missing field '{field}' in record {idx}")
-            elif row[field] is None:
-                errors.append(f"Null value for '{field}' in record {idx}")
-    return errors
-
-@app.route("/train", methods=["POST"])
-def train():
-    try:
-        import src.train_model as train_mod
-        # Re-run the training script (reloads data, retrains, saves model and tree)
-        metrics = train_mod.main_api()
-        return jsonify({"status": "success", **metrics})
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e), "trace": traceback.format_exc()}), 500
+def validate_instances(instances):
+    if not isinstance(instances, list) or len(instances) == 0:
+        return False, "Field 'instances' must be a non-empty list of feature dicts."
+    # basic check: ensure dicts
+    for i, inst in enumerate(instances):
+        if not isinstance(inst, dict):
+            return False, f"Instance at index {i} is not a JSON object."
+    return True, ""
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    data = request.get_json()
-    errors = validate_input(data)
-    if errors:
-        return jsonify({"status": "error", "errors": errors}), 400
-    model = load_model()
-    if model is None:
-        return jsonify({"status": "error", "message": "Model not trained. Please call /train first."}), 400
-    df = pd.DataFrame(data) if isinstance(data, list) else pd.DataFrame([data])
-    # Add glucose_missing column if model expects it
-    if "glucose_missing" in getattr(model, "feature_names_in_", []) or "glucose_missing" in df.columns or True:
-        # Always add glucose_missing to match training logic
-        df["glucose_missing"] = df["glucose"].isnull().astype(int) if "glucose" in df.columns else 1
+    data = request.get_json(force=True)
+    if data is None or "instances" not in data:
+        return jsonify({"error": "Missing 'instances' in payload"}), 400
+    instances = data["instances"]
+    ok, msg = validate_instances(instances)
+    if not ok:
+        return jsonify({"error": msg}), 400
+    threshold = float(data.get("threshold", DEFAULT_THRESHOLD))
     try:
-        preds = model.predict(df)
-        return jsonify({"status": "success", "predictions": preds.tolist()})
+        X = pd.DataFrame(instances)
+        proba = model.predict_proba(X)[:, 1]
+        preds = (proba >= threshold).astype(int)
+        results = []
+        for inst, p, pr in zip(instances, proba, preds):
+            results.append({"input": inst, "probability": float(p), "predicted_label": int(pr)})
+        return jsonify({"threshold_used": threshold, "results": results})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e), "trace": traceback.format_exc()}), 500
+        return jsonify({"error": "Model prediction failed", "details": str(e)}), 500
 
-@app.route("/tree", methods=["GET"])
-def tree():
-    if os.path.exists(PNG_PATH):
-        return send_file(PNG_PATH, mimetype="image/png")
-    else:
-        return jsonify({"status": "error", "message": "Tree visualization not found. Please train the model first."}), 404
+@app.route("/thresholds", methods=["GET"])
+def thresholds():
+    return jsonify(meta)
+
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status": "ok", "model_path": MODEL_PATH})
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(host="0.0.0.0", port=5000)

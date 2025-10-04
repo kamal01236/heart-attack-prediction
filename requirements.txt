@@ -1,8 +1,10 @@
 pandas
 numpy
-matplotlib
-seaborn
 scikit-learn
-joblib
+matplotlib
 flask
-jupyter
+joblib
+graphviz
+seaborn
+pytest
+nbformat
