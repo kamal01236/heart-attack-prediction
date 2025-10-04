@@ -1,6 +1,33 @@
-# Heart Attack Prediction Pipeline
+# Heart Attack Prediction using Machine Learning ⚕️
 
 This repository contains a small, reproducible pipeline for training, evaluating and serving a RandomForest model that predicts heart-attack risk from patient features. It includes preprocessing utilities, model training with threshold selection policies, simple visualizations (PR/ROC curves and a pruned decision tree), and a Flask API for inference.
+
+**Repository:** `kamal01236/heart_attack_prediction`
+
+This repository implements a machine learning pipeline to **predict the risk of heart attack** based on a dataset of U.S. heart patients aged 30–80.  
+The pipeline includes:
+
+- Exploratory Data Analysis (EDA)  
+- Data preprocessing and feature engineering  
+- Model experimentation with **Decision Tree** (baseline) and **RandomForestClassifier** (final model)  
+- Hyperparameter tuning, threshold selection, and evaluation  
+- Serialization of the final model as a pickle file  
+- Flask-based API for inference (`/predict`, `/thresholds`, `/health`)  
+- Unit tests for API endpoints  
+
+The final deployed model is a **RandomForestClassifier**, chosen after multiple experiments because it provided better generalization, robust performance, and stability compared to a single decision tree. A sample decision tree is also visualized for interpretability, but the ensemble is the actual predictor.
+
+---
+
+## Repository Structure (high-level)
+
+- `notebooks/` — Jupyter notebooks for EDA and pipeline workflows  
+- `src/` — source code: preprocessing, training, model utils, API  
+- `models/` — output artifacts and final model pickle (`final_model.pkl`)  
+- `tests/` — unit tests for the API  
+- `data/` — dataset (`US_Heart_Patients.csv`)  
+
+# Heart Attack Prediction Pipeline
 
 ## High-level architecture
 
