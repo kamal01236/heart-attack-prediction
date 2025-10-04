@@ -1,0 +1,35 @@
+# Python cache / compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model artifacts and outputs
+models/
+*.pkl
+*.joblib
+*.sav
+
+# Logs
+*.log
+
+# pytest cache
+.pytest_cache/
