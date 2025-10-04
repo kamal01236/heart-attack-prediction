@@ -23,10 +23,9 @@ env/
 Thumbs.db
 
 # Model artifacts and outputs
-models/
-*.pkl
-*.joblib
-*.sav
+# models/
+# *.joblib
+# *.sav
 
 # Logs
 *.log

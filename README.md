@@ -34,6 +34,30 @@ This repository contains a small, reproducible pipeline for training, evaluating
 - Feature importances: `models/feature_importances.csv`
 - (Optional) Tree visualizations: `models/tree_pruned.png`, `models/tree.svg` / `models/tree.dot`
 
+## Final Deliverables
+
+This repo contains the following deliverables :
+
+1. Jupyter Notebooks for EDA / experimentation
+   - `notebooks/02_pipeline_workflow.ipynb` — interactive EDA + pipeline exploration. (Also see `src/train_model.py` for the final training run.) 
+
+2. Python files for API
+   - `src/app.py` — Flask inference API (POST `/predict`, GET `/thresholds`, GET `/health`). See tests in `tests/test_app.py`. 
+
+3. Model pickle (Final Model)
+   - Expected location after training: `models/final_model.pkl`.
+   - If `models/final_model.pkl` is not present in the repo, run training to generate it:
+     ```
+     python -m src.train_model
+     ```
+     This will create `models/final_model.pkl` and additional artifacts. See `src/train_model.py` for details. :contentReference[oaicite:9]{index=9}
+
+4. Model artifacts created by training (saved to `models/`)
+   - `pr_curve.png`, `roc_curve.png`, `threshold_metrics.csv`, `threshold_selection.json`, `threshold_selection.txt`, `feature_importances.csv`, `tree_pruned.png`, optionally `tree.svg`. These are saved by `src/train_model.py`. :contentReference[oaicite:10]{index=10}
+
+5. Small write-up describing solution & model summary
+   - `MODEL_SUMMARY.md` (added to repo) — short summary including best model hyperparameters, F1/precision/recall on test, chosen threshold, and a short recommendation. (See `MODEL_SUMMARY.md` file.)
+
 ## Running locally (recommended development setup)
 
 1. Create virtual environment and install dependencies (PowerShell):

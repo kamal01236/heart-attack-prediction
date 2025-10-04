@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-10-04T15:01:12.912773Z",
+  "threshold_optimal_f1": 0.5800000000000001,
+  "best_f1": 0.36644591611479027,
+  "threshold_for_recall_target": 0.37,
+  "recall_target": 0.8,
+  "threshold_for_recall_precision": 0.21166892808683854,
+  "threshold_for_recall_f1": 0.33548387096774196,
+  "threshold_cost_min": 0.32,
+  "cost_min_value": 915.0,
+  "costs": {
+    "FP": 1,
+    "FN": 10
+  },
+  "notes": [
+    "threshold_optimal_f1 maximizes F1 (balanced precision & recall).",
+    "threshold_for_recall_target is the lowest threshold achieving recall >= TARGET_RECALL; among those, we pick the one with highest precision.",
+    "threshold_cost_min minimizes expected operational cost = FP*cost_fp + FN*cost_fn."
+  ]
+}
