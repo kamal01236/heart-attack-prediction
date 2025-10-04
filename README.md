@@ -11,7 +11,7 @@ This repository contains a small, reproducible pipeline for training, evaluating
 	- `src/model_utils.py` — load/save model bundles and threshold helper functions used by both training and the API.
 	- `src/app.py` — Flask app exposing prediction and metadata endpoints.
 
-- `notebooks/` — interactive notebooks used for EDA and experimentation.
+- `notebooks/` — interactive notebooks used for EDA and experimentation. final version `notebooks/02_pipeline_workflow.ipynb`
 - `data/` — dataset (CSV) and any processed data (typically gitignored).
 - `models/` — saved model bundles and artifacts (plots, feature importances, threshold selection files). Models are typically gitignored in production.
 - `tests/` — unit tests for the API and utilities.
@@ -33,6 +33,27 @@ This repository contains a small, reproducible pipeline for training, evaluating
 - Threshold metrics: `models/threshold_metrics.csv`, `models/threshold_selection.json`, `models/threshold_selection.txt`
 - Feature importances: `models/feature_importances.csv`
 - (Optional) Tree visualizations: `models/tree_pruned.png`, `models/tree.svg` / `models/tree.dot`
+
+## Model choice: Decision Tree vs RandomForest
+
+During experimentation (see notebooks in `notebooks/01_pipeline_workflow.ipynb` and `notebooks/02_pipeline_workflow.ipynb`), 
+we evaluated both **Decision Tree** and **RandomForest** models:
+
+- **Decision Tree (baseline):**
+  - Easy to interpret.
+  - Served as an initial baseline.
+  - Tended to overfit and had lower F1/recall performance in validation.
+
+- **RandomForest (final model):**
+  - An ensemble of many Decision Trees trained on bootstrap samples and random feature subsets.
+  - More robust, reduced overfitting, and consistently outperformed a single Decision Tree in F1, ROC AUC, and recall.
+  - Chosen as the **final predictive model**.
+  - Still allows interpretability: we visualize a *sample decision tree* (see `models/tree_pruned.png`) to explain decision logic.
+
+**Final solution:**  
+The deployed model is a **RandomForestClassifier inside a preprocessing pipeline**, tuned via GridSearchCV.  
+Decision Tree was used in early experiments and for visualization, but the RandomForest model was selected for production because it achieved higher performance and robustness.
+
 
 ## Final Deliverables
 
@@ -149,6 +170,4 @@ All thresholds and threshold-by-metric CSV are saved so you can inspect the trad
 
 If you want help extending the API (add batching, authentication, or a FastAPI migration), setting up CI or porting to a microservice platform, tell me which piece you'd like done next and I can implement it.
 
----
-Generated: updated README to better document architecture, usage and decision rationale.
 

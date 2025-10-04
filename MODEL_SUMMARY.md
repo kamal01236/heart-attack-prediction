@@ -3,6 +3,18 @@
 **Model type:** RandomForest pipeline (preprocessing + RandomForest) — selected via GridSearchCV.  
 **Random seed:** 13.
 
+## Model selection rationale
+
+We experimented with both **DecisionTreeClassifier** and **RandomForestClassifier**:
+
+- A single **Decision Tree** was used as a baseline and for visualization purposes.  
+- The **RandomForestClassifier** consistently provided better generalization, higher F1, and more stable recall/precision trade-offs.  
+- Therefore, **the final predictive model is a RandomForestClassifier**, trained within a preprocessing pipeline and tuned with GridSearchCV.
+
+For interpretability, we also visualize one pruned Decision Tree from the RandomForest (see `models/tree_pruned.png`), 
+but this is only for explanation — the deployed model is the full RandomForest ensemble.
+
+
 ## Best hyperparameters (GridSearchCV result)
 - classifier__n_estimators: 200
 - classifier__max_depth: 10
