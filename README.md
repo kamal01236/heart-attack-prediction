@@ -50,10 +50,10 @@ This repo contains the following deliverables :
      ```
      python -m src.train_model
      ```
-     This will create `models/final_model.pkl` and additional artifacts. See `src/train_model.py` for details. :contentReference[oaicite:9]{index=9}
+     This will create `models/final_model.pkl` and additional artifacts. See `src/train_model.py` for details.
 
 4. Model artifacts created by training (saved to `models/`)
-   - `pr_curve.png`, `roc_curve.png`, `threshold_metrics.csv`, `threshold_selection.json`, `threshold_selection.txt`, `feature_importances.csv`, `tree_pruned.png`, optionally `tree.svg`. These are saved by `src/train_model.py`. :contentReference[oaicite:10]{index=10}
+   - `pr_curve.png`, `roc_curve.png`, `threshold_metrics.csv`, `threshold_selection.json`, `threshold_selection.txt`, `feature_importances.csv`, `tree_pruned.png`, optionally `tree.svg`. These are saved by `src/train_model.py`.
 
 5. Small write-up describing solution & model summary
    - `MODEL_SUMMARY.md` (added to repo) — short summary including best model hyperparameters, F1/precision/recall on test, chosen threshold, and a short recommendation. (See `MODEL_SUMMARY.md` file.)
